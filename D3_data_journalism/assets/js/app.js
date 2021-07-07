@@ -21,8 +21,8 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Import Data
-//dataPath = "D3_data_journalism/assets/data/data.csv"
-d3.csv("data.csv").then(function(stateData) {
+
+d3.csv("/Users/bitty/D3-chalenge/D3-challenge/D3_data_journalism/assets/data/data.csv").then(function(stateData) {
 
     // Step 1: Parse Data/Cast as numbers
     // ==============================
@@ -69,26 +69,26 @@ d3.csv("data.csv").then(function(stateData) {
 
     // Step 6: Initialize tool tip
     // ==============================
-    var toolTip = d3.tip()
-      .attr("class", "tooltip")
-      .offset([80, -60])
-      .html(function(d) {
-        return (`${d.abbr}<br>% poverty: ${d.poverty}<br>% healthcare: ${d.healthcare}`);
-      });
+    //var toolTip = d3.tip()
+      //.attr("class", "tooltip")
+      //.offset([80, -60])
+      //.html(function(d) {
+        //return (`${d.abbr}<br>% poverty: ${d.poverty}<br>% healthcare: ${d.healthcare}`);
+      //});
 
     // Step 7: Create tooltip in the chart
     // ==============================
-    chartGroup.call(toolTip);
+    //chartGroup.call(toolTip);
 
     // Step 8: Create event listeners to display and hide the tooltip
     // ==============================
-    circlesGroup.on("click", function(data) {
-      toolTip.show(data, this);
-    })
+    //circlesGroup.on("click", function(data) {
+      //toolTip.show(data, this);
+    //})
       // onmouseout event
-      .on("mouseout", function(data, index) {
-        toolTip.hide(data);
-      });
+      //.on("mouseout", function(data, index) {
+        //toolTip.hide(data);
+      //});
 
     // Create axes labels
     chartGroup.append("text")
