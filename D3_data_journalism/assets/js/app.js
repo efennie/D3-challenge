@@ -68,13 +68,35 @@ d3.csv("/data/data.csv").then(function(stateData) {
 
     //adding state abbreviations to our circles
     //.attr("text", d=> (d.abbr))
-    var circleText = circlesGroup.append("text")
-      .text(d => d.abbr)
-      .attr("cx", d => xLinearScale(d.poverty))
-      .attr("cy", d => yLinearScale(d.healthcare) + 5 )
-      .classed("stateText", true);
+    //var circleText = circlesGroup.append("text")
+      //.text(d => d.abbr)
+      //.attr("cx", d => xLinearScale(d.poverty))
+      //.attr("cy", d => yLinearScale(d.healthcare))
+      //.classed("stateText", true)
 
-    // Create axes labels
+    //newest attempt
+    //circlesGroup
+      //.append("text")
+      //.text(function(d) {return d.abbr;})
+      //.attr("dx", function(d) {return xLinearScale(d.poverty);})
+      //.attr("dy", function(d) {return yLinearScale(d.healthcare) + 10 / 2.5;})
+      //.attr("font-size", 10)
+      //.attr("class", "stateText")
+      
+    //adding state abbreviations to our circles this one works 
+    //but the text isn't centered
+    svg.append("g")
+      .selectAll("circle")
+      .data(stateData)
+      .enter()
+      .append("text")
+      .attr("dx", (d) => {return xLinearScale(d.poverty)})
+      .attr("dy", (d) => {return xLinearScale(d.healthcare)})
+      .text(function(d) {return d.abbr})
+      .attr("font-size", 10)
+      .attr("class", "stateText")
+
+      // Create axes labels
     chartGroup.append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 0 - margin.left + 40)
