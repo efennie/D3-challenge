@@ -82,7 +82,7 @@ d3.csv("/data/data.csv").then(function(stateData) {
       //.attr("dy", function(d) {return yLinearScale(d.healthcare) + 10 / 2.5;})
       //.attr("font-size", 10)
       //.attr("class", "stateText")
-      
+
     //adding state abbreviations to our circles this one works 
     //but the text isn't centered
     svg.append("g")
