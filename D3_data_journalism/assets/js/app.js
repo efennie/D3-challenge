@@ -49,6 +49,7 @@ d3.csv("/data/data.csv").then(function(stateData) {
     // Step 4: Append Axes to the chart
     // ==============================
     chartGroup.append("g")
+      .classed('axis', true)
       .attr("transform", `translate(0, ${height})`)
       .call(bottomAxis);
 
@@ -66,35 +67,20 @@ d3.csv("/data/data.csv").then(function(stateData) {
       .attr("r", "10")
       .classed("stateCircle", true);
 
-    //adding state abbreviations to our circles
-    //.attr("text", d=> (d.abbr))
-    //var circleText = circlesGroup.append("text")
-      //.text(d => d.abbr)
-      //.attr("cx", d => xLinearScale(d.poverty))
-      //.attr("cy", d => yLinearScale(d.healthcare))
-      //.classed("stateText", true)
-
-    //newest attempt
-    //circlesGroup
-      //.append("text")
-      //.text(function(d) {return d.abbr;})
-      //.attr("dx", function(d) {return xLinearScale(d.poverty);})
-      //.attr("dy", function(d) {return yLinearScale(d.healthcare) + 10 / 2.5;})
-      //.attr("font-size", 10)
-      //.attr("class", "stateText")
-
     //adding state abbreviations to our circles this one works 
     //but the text isn't centered
-    svg.append("g")
-      .selectAll("circle")
+    chartGroup.selectAll("text")
       .data(stateData)
       .enter()
       .append("text")
+      //.merge(circlesGroup)
+      .text(function(d) {
+          return d.abbr
+      })
       .attr("dx", (d) => {return xLinearScale(d.poverty)})
-      .attr("dy", (d) => {return xLinearScale(d.healthcare)})
-      .text(function(d) {return d.abbr})
-      .attr("font-size", 10)
-      .attr("class", "stateText")
+      .attr("dy", (d) => {return yLinearScale(d.healthcare) +5})
+      .attr("font-size", "10px")
+      .attr("class", "stateText");
 
       // Create axes labels
     chartGroup.append("text")
