@@ -97,6 +97,8 @@ d3.csv("/data/data.csv").then(function(stateData) {
       .attr("transform", `translate(${width / 2.5}, ${height + margin.top + 30})`)
       .attr("class", "axisText")
       .text("% of Population in Poverty");
+
   }).catch(function(error) {
     console.log(error);
   });
+
