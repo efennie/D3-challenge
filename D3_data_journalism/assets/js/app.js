@@ -69,16 +69,18 @@ d3.csv("/data/data.csv").then(function(stateData) {
 
     //adding state abbreviations to our circles this one works 
     //but the text isn't centered
-    chartGroup.selectAll("text")
+    svg.append("g")
+      .selectAll("circle")
       .data(stateData)
       .enter()
       .append("text")
       //.merge(circlesGroup)
       .text(function(d) {
-          return d.abbr
+        return d.abbr
       })
+      .attr("transform", `translate(${margin.left}, ${margin.top})`)
       .attr("dx", (d) => {return xLinearScale(d.poverty)})
-      .attr("dy", (d) => {return yLinearScale(d.healthcare) +5})
+      .attr("dy", (d) => {return yLinearScale(d.healthcare)})
       .attr("font-size", "10px")
       .attr("class", "stateText");
 
