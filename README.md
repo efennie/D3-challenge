@@ -10,4 +10,5 @@ data source:
 https://www.census.gov/programs-surveys/acs/technical-documentation/table-and-geography-changes/2014/1-year.html
 
 Final product should look like this:
-https://raw.github.com/efennie/D3-challenge/main/D3_data_journalism/images/Screen%20Shot%202021-07-09%20at%201.37.03%20PM.png
+![Screen Shot 2021-07-09 at 1 37 03 PM](https://user-images.githubusercontent.com/79470987/125134577-6fda8f00-e0bc-11eb-9263-bb00e4d446af.png)
+
