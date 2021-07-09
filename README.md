@@ -8,3 +8,5 @@ Within the folders there are two css files for formatting the visualization, an 
 
 data source:
 https://www.census.gov/programs-surveys/acs/technical-documentation/table-and-geography-changes/2014/1-year.html
+
+Final product should look like this:
