@@ -10,4 +10,4 @@ data source:
 https://www.census.gov/programs-surveys/acs/technical-documentation/table-and-geography-changes/2014/1-year.html
 
 Final product should look like this:
-https://github.com/efennie/D3-challenge/blob/main/D3_data_journalism/images/Screen%20Shot%202021-07-09%20at%201.37.03%20PM.png
+![Alt text](/blob/main/D3_data_journalism/images/Screen%20Shot%202021-07-09%20at%201.37.03%20PM.png?raw=true "Circle Graph")
