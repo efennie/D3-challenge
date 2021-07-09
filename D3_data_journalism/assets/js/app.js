@@ -68,7 +68,7 @@ d3.csv("/data/data.csv").then(function(stateData) {
       .classed("stateCircle", true);
 
     //adding state abbreviations to our circles this one works 
-    //but the text isn't centered
+  
     svg.append("g")
       .selectAll("circle")
       .data(stateData)
